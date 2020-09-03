@@ -5,4 +5,6 @@ members = [
 
     "imxrt-iomuxc",
     "imxrt-iomuxc/imxrt-iomuxc-build",
+
+    "imxrt-usb",
 ]
