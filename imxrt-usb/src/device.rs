@@ -4,11 +4,11 @@
 pub use imxrt_ral as ral;
 pub use usb_device::{Result as UsbResult, UsbDirection, UsbError, bus::UsbBus, endpoint::EndpointAddress};
 
-
-pub struct UsbBus {
+pub struct DeviceController {
+    reg: ral::usb::Instance,
 }
 
-impl UsbBus for UsbBus {
+impl UsbBus for DeviceController {
     fn alloc_ep(
         &mut self,
         ep_dir: UsbDirection

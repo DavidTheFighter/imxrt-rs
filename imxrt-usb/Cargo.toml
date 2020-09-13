@@ -1,16 +1,18 @@
 [package]
 name = "imxrt-usb"
-version = "0.1.0"
 authors = ["Tom Burdick <tom.burdick@electromatic.us>"]
-edition = "2018"
 description = """USB Driver for NXP i.MX RT processors.
 
 Part of the imxrt-rs project.
 """
 repository = "https://github.com/imxrt-rs/imxrt-rs"
-license = "MIT OR Apache-2.0"
+readme = "README.md"
 keywords = ["imxrt", "nxp", "embedded", "no_std"]
 categories = ["embedded", "no-std"]
+license = "MIT/Apache-2.0"
+edition = "2018"
+version = "0.1.0"
 
 [dependencies]
+imxrt-ral = { version = "0.4.0", path = "../imxrt-ral" }
 usb-device = "0.2.5"
