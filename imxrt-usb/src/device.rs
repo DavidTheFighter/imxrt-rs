@@ -4,11 +4,21 @@
 pub use imxrt_ral as ral;
 pub use usb_device::{Result as UsbResult, UsbDirection, UsbError, bus::UsbBus, endpoint::EndpointAddress};
 
-pub struct DeviceController {
+pub struct Device<M> where M: Unsigned {
+    _module: PhantomData<M>,
     reg: ral::usb::Instance,
 }
 
-impl UsbBus for DeviceController {
+impl Device<M> {
+    pub(crate) fn new(reg: ral::usb::Instance) -> Device<M> {
+        //TODO initialize the usb instance as a device controller
+        Device {
+            reg: reg
+        }
+    }
+}
+
+impl UsbBus for Device<M> {
     fn alloc_ep(
         &mut self,
         ep_dir: UsbDirection
